@@ -1,0 +1,6 @@
+Data/
+.idea/
+*.pyc
+/Dockerfile
+*.pkl
+test/
