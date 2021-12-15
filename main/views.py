@@ -37,12 +37,12 @@ def result(request):
     os.system('cd')
 
     run_projection(
-        network_pkl = './dnnlib/ffhq.pkl',
+        network_pkl = './dnnlib/network-snapshot-000800.pkl',
         target_fname = './media/'+in_path,
         outdir = './media/out',
         save_video = False,
         seed = 100,
-        num_steps = 100
+        num_steps = 200
     )
 
 
