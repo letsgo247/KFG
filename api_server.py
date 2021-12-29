@@ -46,7 +46,7 @@ def ganarate():
         # print(request.form.to_dict())
         img = request.files['img']
         print('=====================')
-        print(img.filename)
+        # print(img.filename)
         filepath = './save/'+secure_filename(img.filename)
 
         img.save(filepath)
