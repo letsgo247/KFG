@@ -16,26 +16,26 @@ def success(name):
 @app.route('/ganarate', methods=('GET', 'POST'))
 def ganarate():
     if request.method == 'GET':
-        print('**********************')
-        print(request.args.to_dict())
-        print('**********************')
-        img = request.args['img']
-        print('=====================')
-        print(img.filename)
-        print('=====================')
-        # img.save(secure_filename(img.filename))
+        # print('**********************')
+        # print(request.args.to_dict())
+        # print('**********************')
+        # img = request.args['img']
+        # print('=====================')
+        # print(img.filename)
+        # print('=====================')
+        # # img.save(secure_filename(img.filename))
           
-        # response.setHeader("Access-Control-Allow-Origin", "*");
-        # return make_response(response)
+        # # response.setHeader("Access-Control-Allow-Origin", "*");
+        # # return make_response(response)
 
-        run_projection(
-        network_pkl = './dnnlib/network-snapshot-000800.pkl',
-        target_fname = './media/'+in_path,
-        outdir = './media/out',
-        save_video = False,
-        seed = 100,
-        num_steps = 200
-        )
+        # run_projection(
+        # network_pkl = './dnnlib/network-snapshot-000800.pkl',
+        # target_fname = './media/'+in_path,
+        # outdir = './media/out',
+        # save_video = False,
+        # seed = 100,
+        # num_steps = 200
+        # )
 
         return text
 
@@ -46,7 +46,7 @@ def ganarate():
         # print(request.form.to_dict())
         img = request.files['img']
         print('=====================')
-        # print(img.filename)
+        print(img.filename)
         filepath = './save/'+secure_filename(img.filename)
 
         img.save(filepath)

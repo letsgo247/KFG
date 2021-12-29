@@ -40,7 +40,7 @@ def result(request):
     data = open('./media/'+in_path,'rb')
     print('data=',data)
 
-    res = requests.post('http://127.0.0.2:7000/ganarate', files={'img':data}, params={'name':'진주'})
+    res = requests.post('http://127.0.0.2:7000/ganarate', files={'img':data})
 
     file = open('./media/out/proj.png', 'wb')
     file.write(res.content)
