@@ -4,5 +4,6 @@ Data/
 /Dockerfile
 *.pkl
 test/
-restfulapi_request.py
-restfulapi_sever.py
+save/*
+media/*
+etc/

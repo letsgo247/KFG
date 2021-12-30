@@ -28,15 +28,6 @@ def ganarate():
         # # response.setHeader("Access-Control-Allow-Origin", "*");
         # # return make_response(response)
 
-        # run_projection(
-        # network_pkl = './dnnlib/network-snapshot-000800.pkl',
-        # target_fname = './media/'+in_path,
-        # outdir = './media/out',
-        # save_video = False,
-        # seed = 100,
-        # num_steps = 200
-        # )
-
         return text
 
 
@@ -60,15 +51,6 @@ def ganarate():
         num_steps = 10
         )
 
-        # result = open('./save/out/proj.png','rb')
-        # print('**********************')
-        # print(result)
-        
-        # text = request.form['text']
-        # text = text*10     
-        # response.setHeader("Access-Control-Allow-Origin", "*");
-        # return make_response(response)
-        # return {'result':result}
         return send_file('./save/out/proj.png')
 
 if __name__ == '__main__':
