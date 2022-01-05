@@ -1,5 +1,5 @@
 from flask import Flask, request, send_file
-from flask.helpers import make_response
+# from flask.helpers import make_response
 from werkzeug.utils import secure_filename
 
 from stylegan2_ada_pytorch.projector import run_projection
@@ -24,9 +24,11 @@ def ganarate():
         # print(img.filename)
         # print('=====================')
         # # img.save(secure_filename(img.filename))
-          
-        # # response.setHeader("Access-Control-Allow-Origin", "*");
-        # # return make_response(response)
+        
+        '''
+        GET: request.args
+        POST: request.form
+        '''
 
         return text
 

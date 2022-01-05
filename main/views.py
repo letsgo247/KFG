@@ -22,23 +22,28 @@ def index(request):
 def result(request):
     print('request.FILES=', request.FILES)
     fileObj = request.FILES['filePath']
-    print('fileObj=', fileObj)
-    fs = FileSystemStorage()
+    print('# fileObj=', fileObj)
+    print('# type(fileObj)=', type(fileObj))
+    print('# type(fileObj.file)=', type(fileObj.file))
+
     filename_encoded = parse.quote(fileObj.name)    # 한글 에러나서 ?로 인코딩 해주는 함수
-    print('fileObj.name =', filename_encoded)
+    print('# fileObj.name =', filename_encoded)
     filename_cleaned = get_valid_filename(filename_encoded)     # 알파벳, 대시, 언더바, 닷 등 제거하고 클린하게 만들어줌
-    print('filename_cleaned=', filename_cleaned)
+    print('# filename_cleaned=', filename_cleaned)
+
+    fs = FileSystemStorage()
     filename_final = fs.save(filename_cleaned, fileObj) #'이 이름으로, 이 object를 저장한다'
-    print('filename_final=', filename_final)
+    print('# filename_final=', filename_final)
     in_path = filename_final
     out_path = './media/out/proj.png'
-    print('in_path=', in_path)
+    print('# in_path=', in_path)
 
     
     # os.system('pwd')
     os.system('cd')
     data = open('./media/'+in_path,'rb')
-    print('data=',data)
+    print('# data=',data)
+    print('# type(data)=',type(data))
 
     res = requests.post('http://127.0.0.2:7000/ganarate', files={'img':data})
 
